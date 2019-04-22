@@ -19,3 +19,13 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+*.iml
+*.iws
+*.eml
+out/
+.svn
+log/*.log
+tmp/**
+.sass-cache
+css/reveal.min.css
+js/reveal.min.js

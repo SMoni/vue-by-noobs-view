@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/softwerkskammer.png">
-    <HelloWorld msg="Hello World... OMG!!!ZeroOneEleven"/>
+    <HelloWorld msg="Hello World... OMG!!!OneOneEleven!!"/>
   </div>
 </template>
 

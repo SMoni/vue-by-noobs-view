@@ -16,15 +16,30 @@
 </head>
 <body>
     <div id="app">
-        {{ message }}
+        <ol>
+            <todo-item
+                v-for="entry in todoList"
+                v-bind:todo="entry"
+                v-bind:key="entry.id"
+            ></todo-item>
+        </ol>
     </div>
     <script>
+        Vue.component('todo-item', {
+            props: ['todo'],
+            template: '<li>{{ todo.text }}</li>'
+        });
+
         const app = new Vue({
             el: '#app',
             data: {
-                message: 'Hello World!'
+                todoList: [
+                    { id: 1, text: 'Präsentation' },
+                    { id: 2, text: 'Demo script-include' },
+                    { id: 3, text: 'Demo vue-cli' }
+                ]
             }
-        })      
+        });     
     </script>
 </body>
 </html>

@@ -1,60 +1,67 @@
 <template>
-	<div>
-		<ul v-if="todos.length">
-			<todo-Item
-				v-for="todo in todos"
-				:key="todo.id"
-				:todo="todo"
-				@remove="removeTodo"
-			/>
-		</ul>
+	<div class="todo-list">
+    <todo-input
+      v-model="newTodoText"
+      placeholder="Mit Enter neu anlegen..."
+      @keydown.enter="addTodo" 
+    />
+    <todo-item
+      v-for="todo in todos"
+      :key="todo.id"
+      :item="todo"
+      @remove="removeTodo"
+    />
 	</div>
 </template>
 
 <script>
-import TodoItem from '@/components/ToDo/Item.vue'
+import uuid  from 'uuid/v1'
+//
+import TodoItem  from '@/components/Todo/Item.vue'
+import TodoInput from '@/components/Todo/Input.vue'
 
-let nextTodoId = 1
+function createTodoWith(text) {
+  return {
+    id:   uuid(),
+    text: text
+  }
+}
 
 export default {
   name: 'TodoList',
 	components: {
-		TodoItem
+    TodoItem,
+    TodoInput
 	},
   data () {
     return {
 			newTodoText: '',
       todos: [
-				{
-					id: nextTodoId++,
-					text: 'Learn Vue'
-				},
-				{
-					id: nextTodoId++,
-					text: 'Learn about single-file components'
-				},
-				{
-					id: nextTodoId++,
-					text: 'Fall in love'
-				}
+        createTodoWith('Präsentation'),
+        createTodoWith('Demo script-include'),
+        createTodoWith('Demo vue-cli')
 			]
     }
   },
 	methods: {
 		addTodo () {
+
 			const trimmedText = this.newTodoText.trim()
-			if (trimmedText) {
-				this.todos.push({
-					id: nextTodoId++,
-					text: trimmedText
-				})
-				this.newTodoText = ''
-			}
+
+      if (!trimmedText) {
+        return
+      }
+
+      const newItem = [createTodoWith(trimmedText)]
+
+      this.todos = this.todos
+        .concat(newItem)
+
+      this.newTodoText = ''
 		},
 		removeTodo (idToRemove) {
-			this.todos = this.todos.filter(todo => {
-				return todo.id !== idToRemove
-			})
+      this.todos = this.todos
+        .filter(todo => todo.id !== idToRemove)
 		}
 	}
 }

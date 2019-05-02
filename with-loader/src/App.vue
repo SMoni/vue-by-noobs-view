@@ -8,7 +8,7 @@
 
 <script>
 import HelloWorld from '@/components/HelloWorld.vue'
-import TodoList   from '@/components/ToDo/List.vue'
+import TodoList   from '@/components/Todo/List.vue'
 
 export default {
   name: 'app',
@@ -25,6 +25,11 @@ body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+}
+
+.todo-list {
+  margin-left: 3rem;
 }
 
 </style>

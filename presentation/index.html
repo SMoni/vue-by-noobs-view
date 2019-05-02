@@ -110,19 +110,19 @@
                 </section>
                 <section>
                     <h2>CODE!</h2>
-                    <pre><code data-trim>
+                    <pre><code data-trim class="hljs">
                         &lt;template&gt;
-                          &lt;div class=&quot;dummy&quot;&gt;{{ msg }}&lt;/div&gt;
+                          &lt;div class=&quot;my-dummy&quot;&gt;{{ msg }}&lt;/div&gt;
                         &lt;/template&gt;
                         &lt;script&gt;
                           export default {
-                            name: 'dummy'
-                              data () {
-                                return {
+                            name: 'MyDummy',
+                            data () {
+                              return {
                                   msg: 'Hello world!'
-                                }
                               }
                             }
+                          }
                         &lt;/script&gt;
                         &lt;style&gt;
                           .example {
@@ -130,6 +130,15 @@
                           }
                         &lt;/style&gt;
                     </code></pre>
+                </section>
+                <section>
+                    <h2>Tumbling down</h2>
+                    <p class="fragment"><code>name</code></p>
+                    <p class="fragment">Sollte aus mehreren Teilen bestehen!</p>
+                    <p class="fragment"><code>props</code></p>
+                    <p class="fragment">Soweit wie möglich spezifizieren!</p>
+                    <p class="fragment"><code>data</code></p>
+                    <p class="fragment">Immer als Objekt zurückgeben!</p>
                 </section>
                 <section>
                     <h2>Core Libraries</h2>

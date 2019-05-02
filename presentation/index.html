@@ -107,15 +107,44 @@
                 </section>
                 <section>
                     <h2>Vue Loader</h2>
-                    <p>CODE!</p>
-                    <p class="fragment">Trennung zwischen Template, Code und Styles</p>
-                    <p class="fragment">... am besten per vue-cli</p>
                 </section>
+                <section>
+                    <h2>CODE!</h2>
+                    <pre><code data-trim>
+                        &lt;template&gt;
+                          &lt;div class=&quot;dummy&quot;&gt;{{ msg }}&lt;/div&gt;
+                        &lt;/template&gt;
+                        &lt;script&gt;
+                          export default {
+                            name: 'dummy'
+                              data () {
+                                return {
+                                  msg: 'Hello world!'
+                                }
+                              }
+                            }
+                        &lt;/script&gt;
+                        &lt;style&gt;
+                          .example {
+                            color: red;
+                          }
+                        &lt;/style&gt;
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Core Libraries</h2>
+                    <p class="fragment">Vue Router</p>
+                    <p class="fragment">Vuex</p>
+                    <p class="fragment">Vue Server Renderer</p>
+				</section>
 				<section>
 					<h2>Links</h2>
 					<ul>
 						<li><a href="https://vuejs.org">https://vuejs.org</a></li>
+						<li><a href="https://cli.vuejs.org">https://cli.vuejs.org</a></li>
+						<li><a href="https://vue-loader.vuejs.org">https://vue-loader.vuejs.org</a></li>
 						<li><a href="http://slides.com/evanyou/progressive-javascript">http://slides.com/evanyou/progressive-javascript</a></li>
+						<li><a href="https://github.com/SMoni/vue-by-noobs-view">https://github.com/SMoni/vue-by-noobs-view</a></li>
 					</ul>
                 </section>
 				<section>

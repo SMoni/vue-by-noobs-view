@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <img src="./assets/softwerkskammer.png">
+    <img src="@/assets/softwerkskammer.png">
     <HelloWorld msg="Hello World... OMG!!!OneOneEleven!!"/>
+    <todo-list />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from '@/components/HelloWorld.vue'
+import TodoList   from '@/components/ToDo/List.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+    TodoList
   }
 }
 </script>
